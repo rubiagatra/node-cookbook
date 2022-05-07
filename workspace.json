@@ -1,4 +1,6 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "1-1-handling-standard-io": "apps/1-1-handling-standard-io"
+  }
 }

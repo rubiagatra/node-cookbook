@@ -1,0 +1,51 @@
+{
+  "sourceRoot": "apps/1-1-handling-standard-io/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/1-1-handling-standard-io",
+        "main": "apps/1-1-handling-standard-io/src/main.ts",
+        "tsConfig": "apps/1-1-handling-standard-io/tsconfig.app.json",
+        "assets": ["apps/1-1-handling-standard-io/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/1-1-handling-standard-io/src/environments/environment.ts",
+              "with": "apps/1-1-handling-standard-io/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "1-1-handling-standard-io:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/1-1-handling-standard-io/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/1-1-handling-standard-io"],
+      "options": {
+        "jestConfig": "apps/1-1-handling-standard-io/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
