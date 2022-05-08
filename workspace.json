@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "1-1-handling-standard-io": "apps/1-1-handling-standard-io"
+    "1-1-handling-standard-io": "apps/1-1-handling-standard-io",
+    "1-2-managing-files-with-fs-module": "apps/1-2-managing-files-with-fs-module"
   }
 }
